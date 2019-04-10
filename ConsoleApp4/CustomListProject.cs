@@ -13,6 +13,10 @@ namespace ConsoleApp4
             CustomList<int> thing = new CustomList<int>();
             thing.Add(5);
             thing.Add(4);
+            thing.Add(3);
+            thing.Remove(3);
+            Console.WriteLine(thing[5]);
+            Console.ReadKey();
         }
     }
 }

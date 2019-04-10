@@ -8,30 +8,28 @@ namespace ConsoleApp4
 {
     public class CustomList<T>
     {
-        private T[] items = new T[4];
+        private T[] items = new T[10];
 
         public T this[int i]
         {
             get { return items[i]; }
             set { items[i] = value; }
         }
+
         private int count;
+        public int listlength;
+
+        //public int increaseListSize()
+        //{
+
+        //}
+
+
 
         public int Count
         {
             get { return count; }
 
-            //int i;
-            //int count=0;
-            //if (items[0] = null)
-            //{
-            //    return count;
-            //}
-            //for (i = 0;items.Length ; i++)
-            //{
-            //    count++;
-            //}
-            //return count;
         }
 
         public void Add(T item)
@@ -50,8 +48,22 @@ namespace ConsoleApp4
 
         public void Remove(T item)
         {
+            int i;
+            count = 0;
 
+            for (i = 0; i < count; i++)
+            {
+                if (!Equals(items[i], item))
+                {
+                    Add(item);
+                }
+                else if (Equals(items[i], item))
+                {
+
+                }
+            }
         }
+
         //public string ToString()
         //{
 
