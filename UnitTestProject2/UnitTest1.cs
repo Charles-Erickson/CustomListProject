@@ -21,9 +21,10 @@ namespace CustomListTest
 
             //Act
             myList.Add(value);
+            actualValue = myList[0];
 
             //Assert
-            Assert.AreEqual(value, myList[0]);
+            Assert.AreEqual(expectedValue, actualValue);
         }
 
         [TestMethod]
@@ -33,12 +34,14 @@ namespace CustomListTest
             CustomList<int> myList = new CustomList<int>();
             int value = 5;
             int expectedCount = 1;
+            int actualCount;
 
             //Act
             myList.Add(value);
+            actualCount = myList.Count;
 
             //Assert
-            Assert.AreEqual(expectedCount, myList.Count);
+            Assert.AreEqual(expectedCount, actualCount);
         }
 
         [TestMethod]
@@ -77,13 +80,16 @@ namespace CustomListTest
             CustomList<int> myList = new CustomList<int>();
             int value = 5;
             int value1 = 10;
+            int expectedValue = 10;
+            int actualValue;
 
             //Act
             myList.Add(value);
             myList.Add(value1);
+            actualValue = myList[1];
 
             //Assert
-            Assert.AreEqual(value1, myList[1]);
+            Assert.AreEqual(expectedValue, actualValue);
         }
 
 
@@ -98,6 +104,7 @@ namespace CustomListTest
             int value3 = 14;
             int value4 = 6;
             int expectedValue = 6;
+            int actualValue;
 
             //Act
             myList.Add(value);
@@ -105,9 +112,10 @@ namespace CustomListTest
             myList.Add(value2);
             myList.Add(value3);
             myList.Add(value4);
+            actualValue = myList[4];
 
             //Assert
-            Assert.AreEqual(expectedValue, myList[4]);
+            Assert.AreEqual(expectedValue, actualValue);
         }
 
         [TestMethod]
@@ -125,6 +133,7 @@ namespace CustomListTest
             myList.Add(value2);
             myList.Remove(value);
             actual = myList.Count;
+
             //Assert
             Assert.AreEqual(expectedCount, actual);
         }
@@ -137,14 +146,16 @@ namespace CustomListTest
             int value = 5;
             int value2 = 4;
             int expectedValue = 4;
+            int actualValue;
 
             //Act
             myList.Add(value);
             myList.Add(value2);
             myList.Remove(value);
+            actualValue = myList[0];
 
             //Assert
-            Assert.AreEqual(expectedValue, myList[0]);
+            Assert.AreEqual(expectedValue, actualValue);
         }
 
         [TestMethod]
@@ -155,15 +166,17 @@ namespace CustomListTest
             int value = 1;
             int value2 = 2;
             int expectedCount = 2;
+            int actualCount;
 
             //Act
             myList.Add(value);
             myList.Add(value2);
             myList.Add(value);
             myList.Remove(value);
+            actualCount = myList.Count;
 
             //Assert
-            Assert.AreEqual(expectedCount, myList.Count);
+            Assert.AreEqual(expectedCount, actualCount);
 
         }
 
@@ -176,7 +189,8 @@ namespace CustomListTest
             int value2 = 1;
             int value3 = 8;
             int value4 = 7;
-            int expectedvalue = 8;
+            int expectedValue = 8;
+            int actualValue;
 
             //Act
             myList.Add(value);
@@ -184,10 +198,23 @@ namespace CustomListTest
             myList.Add(value3);
             myList.Add(value4);
             myList.Remove(value4);
+            actualValue = myList[2];
 
-            //Assert
+            //Assert            
+            Assert.AreEqual(expectedValue, actualValue);
+        }
+
+        [TestMethod]
+        public void Test_of_False_Bool_With_Remove_Method()
+        {
+            //Arrange
+            int value = 2;
+            int value2 = 8;
+            int value3 = 9;
+            bool actual;
             
-            Assert.AreEqual(expectedvalue, myList[2]);
+            //Act
+
         }
 
         [TestMethod]
@@ -198,15 +225,15 @@ namespace CustomListTest
             int value = 5;
             int value2 = 4;
             string expectedString = "54";
-            string name;
+            string actualString;
 
             //Act
             myList.Add(value);
             myList.Add(value2);
-            name = myList.ToString();
+            actualString = myList.ToString();
 
             //Assert
-            Assert.AreEqual(expectedString, name);
+            Assert.AreEqual(expectedString, actualString);
         }
 
         [TestMethod]
@@ -217,15 +244,15 @@ namespace CustomListTest
             string name = "Dog";
             string name2 = "Cat";
             string expectedName = "DogCat";
-            string testName;
+            string actualName;
 
             //Act
             myList.Add(name);
             myList.Add(name2);
-            testName = myList.ToString();
+            actualName = myList.ToString();
 
             //Assert
-            Assert.AreEqual(expectedName, testName);
+            Assert.AreEqual(expectedName, actualName);
         }
 
         [TestMethod]
@@ -240,16 +267,18 @@ namespace CustomListTest
             int number = 2;
             int number2 = 4;
             int expectedValue = 2;
+            int actualValue;
 
             //Act
             myList.Add(value);
             myList.Add(value2);
             myList2.Add(number);
             myList2.Add(number2);
-            //TestList = myList.Zipper(myList2);
+            TestList = myList.Zipper(myList2);
+            actualValue = TestList[2];
 
             //Assert
-            Assert.AreEqual(expectedValue, TestList[2]);
+            Assert.AreEqual(expectedValue, actualValue);
         }
 
         [TestMethod]
@@ -263,7 +292,9 @@ namespace CustomListTest
             int value2 = 3;
             int number = 2;
             int number2 = 4;
-            int expectedValue = 4;
+            int expectedCount = 4;
+            int actualCount;
+            
 
             //Act
             myList.Add(value);
@@ -271,9 +302,10 @@ namespace CustomListTest
             myList2.Add(number);
             myList2.Add(number2);
             //TestList = myList.Zipper(myList2);
-
+            actualCount = TestList.Count;
+      
             //Assert
-            Assert.AreEqual(expectedValue, TestList.Count);
+            Assert.AreEqual(expectedCount, actualCount);
         }
     }
 }

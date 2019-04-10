@@ -55,7 +55,7 @@ namespace ConsoleApp4
             count++;
         }
 
-        public void Remove(T item)
+        public bool Remove(T item)
         {
             int i;
 
