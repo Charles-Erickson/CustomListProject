@@ -29,7 +29,6 @@ namespace ConsoleApp4
         public int Count
         {
             get { return count; }
-
         }
 
         public void Add(T item)

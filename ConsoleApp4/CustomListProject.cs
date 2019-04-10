@@ -14,9 +14,8 @@ namespace ConsoleApp4
             thing.Add(5);
             thing.Add(4);
             thing.Add(3);
-            thing.Remove(3);
-            Console.WriteLine(thing[5]);
-            Console.ReadKey();
+            thing.Remove(5);
+            thing.Add(2);         
         }
     }
 }

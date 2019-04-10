@@ -132,6 +132,26 @@ namespace CustomListTest
         }
 
         [TestMethod]
+        public void Test_Of_Removing_One_Index_When_Multiple_Values_Are_The_Same()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int value = 1;
+            int value2 = 2;
+            int expectedCount = 2;
+
+            //Act
+            myList.Add(value);
+            myList.Add(value2);
+            myList.Add(value);
+            myList.Remove(value);
+
+            //Assert
+            Assert.AreEqual(expectedCount, myList.Count);
+
+        }
+
+        [TestMethod]
         public void Test_Of_List_To_String()
         {
             //Arrange
