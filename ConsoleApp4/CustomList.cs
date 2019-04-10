@@ -9,7 +9,7 @@ namespace ConsoleApp4
     public class CustomList<T>
     {
       
-        public int capicty = 10;
+        public int capacity = 4;
         private T[] items;
 
         public T this[int i]
@@ -23,13 +23,8 @@ namespace ConsoleApp4
 
         public CustomList()
         {
-            items = new T[capicty];
+            items = new T[capacity];
         }
-
-        //public int increaseListSize()
-        //{
-
-        //}
 
         public int Count
         {
@@ -41,19 +36,23 @@ namespace ConsoleApp4
             if (count == 0)
             {
                 items[0] = item;
-                count++;
             }
-            else if (count == capicty)
+            else if (count == capacity)
             {
-                capicty = capicty * 2;
+                capacity = capacity * 2;
+                T[] temp = new T[capacity];
+                for (int i = 0; i < count; i++)
+                {
+                    temp[i] = items[i];
+                }
+                items = temp;
                 items[count] = item;
-                count++;
             }
             else if (count > 0)
             {
                 items[count] = item;
-                count++;
             }
+            count++;
         }
 
         public void Remove(T item)
@@ -70,15 +69,14 @@ namespace ConsoleApp4
                 {
     
                 }
-             
             }
             count--;
-
-            //static List<T>Combine(List<T> list, List<T> list2)
-            //{
-
-            //}
         }
+
+        //static List<T>Combine(List<T> list, List<T> list2)
+        //{
+
+        //}
 
         //public string ToString()
         //{

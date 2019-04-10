@@ -16,6 +16,8 @@ namespace CustomListTest
             //Arrange
             CustomList<int> myList = new CustomList<int>();
             int value = 5;
+            int expectedValue = 5;
+            int actualValue;
 
             //Act
             myList.Add(value);
@@ -45,7 +47,9 @@ namespace CustomListTest
             //Arrange
             CustomList<int> myList = new CustomList<int>();
             int value = 5;
-            int value1 = 10;
+            int value1 = 6;
+            int expectedCount = 12;
+            int actualCount;
 
             //Act
             myList.Add(value);
@@ -60,8 +64,10 @@ namespace CustomListTest
             myList.Add(value1);
             myList.Add(value);
             myList.Add(value1);
+            actualCount = myList.Count;
+
             //Assert
-            Assert.AreEqual(value, myList[0]);
+            Assert.AreEqual(expectedCount, actualCount);
         }
 
         [TestMethod]
@@ -112,14 +118,15 @@ namespace CustomListTest
             int value = 5;
             int value2 = 4;
             int expectedCount = 1;
+            int actual;
 
             //Act
             myList.Add(value);
             myList.Add(value2);
             myList.Remove(value);
-
+            actual = myList.Count;
             //Assert
-            Assert.AreEqual(expectedCount, myList.Count);
+            Assert.AreEqual(expectedCount, actual);
         }
 
         [TestMethod]
@@ -158,6 +165,29 @@ namespace CustomListTest
             //Assert
             Assert.AreEqual(expectedCount, myList.Count);
 
+        }
+
+        [TestMethod]
+        public void Test_of_Remove_With_Checking_Last_Index()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int value = 4;
+            int value2 = 1;
+            int value3 = 8;
+            int value4 = 7;
+            int expectedvalue = 8;
+
+            //Act
+            myList.Add(value);
+            myList.Add(value2);
+            myList.Add(value3);
+            myList.Add(value4);
+            myList.Remove(value4);
+
+            //Assert
+            
+            Assert.AreEqual(expectedvalue, myList[2]);
         }
 
         [TestMethod]

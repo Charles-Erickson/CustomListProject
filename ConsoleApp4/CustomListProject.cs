@@ -10,6 +10,12 @@ namespace ConsoleApp4
     {
         static void Main(string[] args)
         {
+
+            
+
+
+
+
             CustomList<int> thing = new CustomList<int>();
             thing.Add(5);
             thing.Add(2);
