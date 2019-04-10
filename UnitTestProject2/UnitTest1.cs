@@ -208,13 +208,39 @@ namespace CustomListTest
         public void Test_of_False_Bool_With_Remove_Method()
         {
             //Arrange
+            CustomList<int> myList = new CustomList<int>();
             int value = 2;
             int value2 = 8;
             int value3 = 9;
             bool actual;
-            
-            //Act
 
+            //Act
+            myList.Add(value);
+            myList.Add(value2);
+            actual = myList.Remove(value3);
+
+            //Assert
+            Assert.IsFalse(actual);
+        }
+
+        [TestMethod]
+        public void Test_of_True_Bool_With_Remove_Method()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int value = 2;
+            int value2 = 8;
+            int value3 = 9;
+            bool actual;
+
+            //Act
+            myList.Add(value);
+            myList.Add(value2);
+            myList.Add(value3);
+            actual = myList.Remove(value3);
+
+            //Assert
+            Assert.IsTrue(actual);
         }
 
         [TestMethod]
