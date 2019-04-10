@@ -8,7 +8,9 @@ namespace ConsoleApp4
 {
     public class CustomList<T>
     {
-        private T[] items = new T[10];
+      
+        public int capicty = 10;
+        private T[] items;
 
         public T this[int i]
         {
@@ -19,12 +21,15 @@ namespace ConsoleApp4
         private int count;
         public int listlength;
 
+        public CustomList()
+        {
+            items = new T[capicty];
+        }
+
         //public int increaseListSize()
         //{
 
         //}
-
-
 
         public int Count
         {
@@ -38,9 +43,15 @@ namespace ConsoleApp4
                 items[0] = item;
                 count++;
             }
+            else if (count == capicty)
+            {
+                capicty = capicty * 2;
+                items[count] = item;
+                count++;
+            }
             else if (count > 0)
             {
-                items[count + 1] = item;
+                items[count] = item;
                 count++;
             }
         }
@@ -48,19 +59,25 @@ namespace ConsoleApp4
         public void Remove(T item)
         {
             int i;
-            count = 0;
 
             for (i = 0; i < count; i++)
             {
                 if (!Equals(items[i], item))
                 {
-                    Add(item);
+                    Add(items[i]);
                 }
                 else if (Equals(items[i], item))
                 {
-
+    
                 }
+             
             }
+            count--;
+
+            //static List<T>Combine(List<T> list, List<T> list2)
+            //{
+
+            //}
         }
 
         //public string ToString()

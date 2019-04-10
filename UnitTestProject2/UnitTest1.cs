@@ -50,7 +50,16 @@ namespace CustomListTest
             //Act
             myList.Add(value);
             myList.Add(value1);
-
+            myList.Add(value);
+            myList.Add(value1);
+            myList.Add(value);
+            myList.Add(value1);
+            myList.Add(value);
+            myList.Add(value1);
+            myList.Add(value);
+            myList.Add(value1);
+            myList.Add(value);
+            myList.Add(value1);
             //Assert
             Assert.AreEqual(value, myList[0]);
         }
