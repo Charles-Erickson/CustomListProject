@@ -8,9 +8,10 @@ namespace ConsoleApp4
 {
     public class CustomList<T>
     {
-      
+
         public int capacity = 4;
         private T[] items;
+        bool test;
 
         public T this[int i]
         {
@@ -57,35 +58,34 @@ namespace ConsoleApp4
 
         public bool Remove(T item)
         {
-            int i;
-
-            for (i = 0; i < count; i++)
+            T[] temp = new T[capacity];
+            for (int i = 0; i < count; i++)
             {
                 if (!Equals(items[i], item))
                 {
-                    Add(items[i]);
+                    for (int v = 0; v < count; v++)
+                    {
+                        temp[v] = items[v];
+                    }
+                    test = false;
                 }
                 else if (Equals(items[i], item))
                 {
-    
+                    count--;
+                    test = true;
                 }
             }
-            count--;
+            for(int c = 0; c < count; c++)
+            {
+                items[c] = temp[c];
+            }
+            return test;
         }
-
-        //static List<T>Combine(List<T> list, List<T> list2)
-        //{
-
-        //}
-
-        //public string ToString()
-        //{
-
-        //}
-        //public List<T> Zipper();
     }
 }
 
 
 //i=0;i<list.length;i+2
 //i=1;i<list.length;i+2
+
+    //if(%2=0) add array[i]
