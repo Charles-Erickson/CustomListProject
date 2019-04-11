@@ -17,7 +17,10 @@ namespace ConsoleApp4
 
 
             CustomList<int> thing = new CustomList<int>();
+            thing.Add(6);
+            thing.Add(2);
             thing.Add(5);
+            thing.Add(4);
             thing.Add(2);
             thing.Remove(5);
         }

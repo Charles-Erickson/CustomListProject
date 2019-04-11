@@ -59,22 +59,22 @@ namespace ConsoleApp4
         public bool Remove(T item)
         {
             T[] temp = new T[capacity];
-            for (int i = 0; i < count; i++)
+            int v = 0;
+            for (int i = 0; i < count; i++, v++)
             {
                 if (!Equals(items[i], item))
                 {
-                    for (int v = 0; v < count; v++)
-                    {
-                        temp[v] = items[v];
-                    }
+                    temp[v] = items[i];
+                    
                     test = false;
                 }
                 else if (Equals(items[i], item))
                 {
-                    count--;
                     test = true;
+                    v--;
                 }
             }
+            count--;
             for(int c = 0; c < count; c++)
             {
                 items[c] = temp[c];

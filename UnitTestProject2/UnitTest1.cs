@@ -300,7 +300,7 @@ namespace CustomListTest
             myList.Add(value2);
             myList2.Add(number);
             myList2.Add(number2);
-            TestList = myList.Zipper(myList2);
+            //TestList = myList.Zipper(myList2);
             actualValue = TestList[2];
 
             //Assert
