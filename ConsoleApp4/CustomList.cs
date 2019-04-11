@@ -66,13 +66,11 @@ namespace ConsoleApp4
                 if (d > 0)
                 {
                     temp[v] = items[i];
-
                     test = true;
                 }
                 else if (!Equals(items[i], item))
                 {
-                    temp[v] = items[i];
-                    
+                    temp[v] = items[i];                    
                     test = false;
                 }
                 else if (Equals(items[i], item))
@@ -82,13 +80,23 @@ namespace ConsoleApp4
                     d++;
                 }
             }
-            count--;
-            for(int c = 0; c < count; c++)
+            for (int c = 0; c < count; c++)
             {
-                items[c] = temp[c];
+                if (c == count)
+                {
+                    items[c] = temp[c + 2];
+                    break;
+                }
+                else
+                {
+                    items[c] = temp[c];
+                }
             }
+            count--;
             return test;
         }
+
+
     }
 }
 
@@ -96,4 +104,13 @@ namespace ConsoleApp4
 //i=0;i<list.length;i+2
 //i=1;i<list.length;i+2
 
-    //if(%2=0) add array[i]
+//if(%2=0) add array[i]
+
+
+//public void Combine(CustomList<T> list2)
+//{
+//  for(int i = 0; i < count; i++)
+//    {
+//        Add(list2[i]);
+//    }
+//}
