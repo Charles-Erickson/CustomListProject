@@ -282,6 +282,48 @@ namespace CustomListTest
         }
 
         [TestMethod]
+        public void Test_Of_Multiple_Add_To_String()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int value = 1;
+            int value2 = 2;
+            int value3 = 3;
+            int value4 = 4;
+            int value5 = 5;
+            string expectedString = "12345";
+            string actualString;
+
+            //Act
+            myList.Add(value);
+            myList.Add(value2);
+            myList.Add(value3);
+            myList.Add(value4);
+            myList.Add(value5);
+            actualString = myList.ToString();
+
+            //Assert
+            Assert.AreEqual(expectedString, actualString);
+        }
+
+        [TestMethod]
+        public void Test_of_To_String_With_No_Entered_Values()
+        {
+            //Assert
+            CustomList<int> myList = new CustomList<int>();
+            string expectedString = "";
+            string actualString;
+
+            //Act
+            actualString = myList.ToString();
+
+            //Assert
+            Assert.AreEqual(expectedString, actualString);
+
+
+        }
+
+        [TestMethod]
         public void Test_Of_Zipper_Method()
         {
             //Arrange
