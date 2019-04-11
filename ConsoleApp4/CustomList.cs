@@ -60,9 +60,16 @@ namespace ConsoleApp4
         {
             T[] temp = new T[capacity];
             int v = 0;
+            int d = 0;
             for (int i = 0; i < count; i++, v++)
             {
-                if (!Equals(items[i], item))
+                if (d > 0)
+                {
+                    temp[v] = items[i];
+
+                    test = true;
+                }
+                else if (!Equals(items[i], item))
                 {
                     temp[v] = items[i];
                     
@@ -72,6 +79,7 @@ namespace ConsoleApp4
                 {
                     test = true;
                     v--;
+                    d++;
                 }
             }
             count--;
