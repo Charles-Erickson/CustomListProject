@@ -107,9 +107,13 @@ namespace ConsoleApp4
             {
                 temp.Add(array[c]);
             }
-            for(int v = 0; v < temp.Count; v++)
+            for(int v = 0; v <Count; v++)
             {
                 items[v] = temp[v];
+            }
+            for(int d = count; d < temp.Count; d++)
+            {
+                Add(temp[d]);
             }
         }
 
