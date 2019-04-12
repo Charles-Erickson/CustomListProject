@@ -321,77 +321,77 @@ namespace CustomListTest
             Assert.AreEqual(expectedString, actualString);
         }
 
-        [TestMethod]
-        public void Test_Of_Combine_Count()
-        {
-            //Arrange
-            CustomList<int> myList = new CustomList<int>();
-            CustomList<int> myList2 = new CustomList<int>();
-            int value = 1;
-            int value2 = 2;
-            int value3 = 3;
-            int value4 = 4;
-            int expectedCount = 4;
-            int actualCount;
+        //[TestMethod]
+        //public void Test_Of_Combine_Count()
+        //{
+        //    //Arrange
+        //    CustomList<int> myList = new CustomList<int>();
+        //    CustomList<int> myList2 = new CustomList<int>();
+        //    int value = 1;
+        //    int value2 = 2;
+        //    int value3 = 3;
+        //    int value4 = 4;
+        //    int expectedCount = 4;
+        //    int actualCount;
 
-            //Act
-            myList.Add(value);
-            myList.Add(value2);
-            myList2.Add(value3);
-            myList2.Add(value4);
-            myList.Combine(myList2);
-            actualCount = myList.Count;
+        //    //Act
+        //    myList.Add(value);
+        //    myList.Add(value2);
+        //    myList2.Add(value3);
+        //    myList2.Add(value4);
+        //    myList.Combine(myList2);
+        //    actualCount = myList.Count;
 
-            //Assert
-            Assert.AreEqual(expectedCount, actualCount);
-        }
+        //    //Assert
+        //    Assert.AreEqual(expectedCount, actualCount);
+        //}
 
-        [TestMethod]
-        public void Test_Of_Combine_Checking_Index()
-        {
-            //Arrange
-            CustomList<int> myList = new CustomList<int>();
-            CustomList<int> myList2 = new CustomList<int>();
-            int value = 1;
-            int value2 = 2;
-            int value3 = 4;
-            int value4 = 5;
-            int expectedValue = 4;
-            int actualValue;
+        //[TestMethod]
+        //public void Test_Of_Combine_Checking_Index()
+        //{
+        //    //Arrange
+        //    CustomList<int> myList = new CustomList<int>();
+        //    CustomList<int> myList2 = new CustomList<int>();
+        //    int value = 1;
+        //    int value2 = 2;
+        //    int value3 = 4;
+        //    int value4 = 5;
+        //    int expectedValue = 4;
+        //    int actualValue;
 
-            //Act
-            myList.Add(value);
-            myList.Add(value2);
-            myList2.Add(value3);
-            myList2.Add(value4);
-            myList.Combine(myList2);
-            actualValue = myList[3];
+        //    //Act
+        //    myList.Add(value);
+        //    myList.Add(value2);
+        //    myList2.Add(value3);
+        //    myList2.Add(value4);
+        //    myList.Combine(myList2);
+        //    actualValue = myList[2];
 
-            //Assert
-            Assert.AreEqual(expectedValue, actualValue);
-        }
+        //    //Assert
+        //    Assert.AreEqual(expectedValue, actualValue);
+        //}
 
-        [TestMethod]
-        public void Test_of_Combine_When_One_List_is_Empty()
-        {
-            CustomList<int> myList = new CustomList<int>();
-            CustomList<int> myList2 = new CustomList<int>();
-            int value = 1;
-            int value2 = 2;
-            int value3 = 3;
-            int expectedCount = 3;
-            int actualCount;
+        //[TestMethod]
+        //public void Test_of_Combine_When_One_List_is_Empty()
+        //{
+        //    CustomList<int> myList = new CustomList<int>();
+        //    CustomList<int> myList2 = new CustomList<int>();
+        //    int value = 1;
+        //    int value2 = 2;
+        //    int value3 = 3;
+        //    int expectedCount = 3;
+        //    int actualCount;
 
-            //Act
-            myList.Add(value);
-            myList.Add(value2);
-            myList.Add(value3);
-            myList.Combine(myList2);
-            actualCount = myList.Count;
+        //    //Act
+        //    myList.Add(value);
+        //    myList.Add(value2);
+        //    myList.Add(value3);
+        //    myList.Combine(myList2);
+        //    actualCount = myList.Count;
 
-            //Assert
-            Assert.AreEqual(expectedCount, actualCount);
-        }
+        //    //Assert
+        //    Assert.AreEqual(expectedCount, actualCount);
+        //}
 
         [TestMethod]
         public void Test_Of_Zipper_Method()
@@ -399,7 +399,6 @@ namespace CustomListTest
             //Arrange
             CustomList<int> myList = new CustomList<int>();
             CustomList<int> myList2 = new CustomList<int>();
-            CustomList<int> TestList = new CustomList<int>();
             int value = 1;
             int value2 = 3;
             int number = 2;
@@ -412,8 +411,8 @@ namespace CustomListTest
             myList.Add(value2);
             myList2.Add(number);
             myList2.Add(number2);
-            //TestList = myList.Zipper(myList2);
-            actualValue = TestList[2];
+            myList.Zipper(myList2);
+            actualValue = myList[2];
 
             //Assert
             Assert.AreEqual(expectedValue, actualValue);
@@ -425,7 +424,6 @@ namespace CustomListTest
             //Arrange
             CustomList<int> myList = new CustomList<int>();
             CustomList<int> myList2 = new CustomList<int>();
-            CustomList<int> TestList = new CustomList<int>();
             int value = 1;
             int value2 = 3;
             int number = 2;
@@ -439,9 +437,31 @@ namespace CustomListTest
             myList.Add(value2);
             myList2.Add(number);
             myList2.Add(number2);
-            //TestList = myList.Zipper(myList2);
-            actualCount = TestList.Count;
+            myList.Zipper(myList2);
+            actualCount = myList.Count;
       
+            //Assert
+            Assert.AreEqual(expectedCount, actualCount);
+        }
+
+        [TestMethod]
+        public void Test_Of_Zipp_When_One_List_Is_Empty()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            CustomList<int> myList2 = new CustomList<int>();
+            int value = 1;
+            int value2 = 3;
+            int expectedCount = 2;
+            int actualCount;
+
+
+            //Act
+            myList.Add(value);
+            myList.Add(value2);
+            myList.Zipper(myList2);
+            actualCount = myList.Count;
+
             //Assert
             Assert.AreEqual(expectedCount, actualCount);
         }

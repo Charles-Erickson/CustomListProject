@@ -12,12 +12,13 @@ namespace ConsoleApp4
         {
             CustomList<int> thing = new CustomList<int>();
             CustomList<int> things = new CustomList<int>();
-            thing.Add(6);
+            CustomList<int> result;
+            thing.Add(1);
             thing.Add(2);
-            thing.Add(5);
+            things.Add(3);
             things.Add(4);
-            things.Add(2);
-            thing.Combine(things);
+            result = thing + things;
+            
         }
     }
 }

@@ -10,7 +10,7 @@ namespace ConsoleApp4
     {
 
         public int capacity = 4;
-        private T[] items;
+        public T[] items;
         bool test;
 
         public T this[int i]
@@ -96,25 +96,25 @@ namespace ConsoleApp4
             return test;
         }
 
-        public void Combine(CustomList<T> array)
+        public static CustomList<T> operator +(CustomList<T> a, CustomList<T> b)
         {
+            CustomList<T> returnList;
             CustomList<T> temp = new CustomList<T>();
-            for(int i = 0; i < count; i++)
+            for(int i = 0; i < a.Count; i++)
             {
-                temp.Add(items[i]);
+                temp.Add(a.items[i]);
             }
-            for(int c = 0; c < count; c++)
+            for(int c = 0; c < b.Count; c++)
             {
-                temp.Add(array[c]);
-            }
-            for(int v = 0; v <Count; v++)
-            {
-                items[v] = temp[v];
-            }
-            for(int d = count; d < temp.Count; d++)
-            {
-                Add(temp[d]);
-            }
+                temp.Add(b.items[c]);
+            }            
+            returnList = temp;
+            return returnList;
+        }
+
+        public void Zipper(CustomList<T> array)
+        {
+
         }
 
 
