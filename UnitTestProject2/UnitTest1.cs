@@ -468,7 +468,111 @@ namespace CustomListTest
             //Assert
             Assert.AreEqual(expectedCount, actualCount);
         }
+        [TestMethod]
+        public void Test_Of_Minus_Count()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            CustomList<int> myList2 = new CustomList<int>();
+            CustomList<int> testList = new CustomList<int>();
+            int value = 1;
+            int value2 = 2;
+            int value3 = 2;
+            int value4 = 4;
+            int expectedCount = 1;
+            int actualCount;
 
+            //Act
+            myList.Add(value);
+            myList.Add(value2);
+            myList2.Add(value3);
+            myList2.Add(value4);
+            testList = myList - myList2;
+            actualCount = testList.Count;
+
+            //Assert
+            Assert.AreEqual(expectedCount, actualCount);
+        }
+
+        [TestMethod]
+        public void Test_Of_Minus_Checking_Index()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            CustomList<int> myList2 = new CustomList<int>();
+            CustomList<int> testList = new CustomList<int>();
+            int value = 1;
+            int value2 = 2;
+            int value3 = 4;
+            int value4 = 2;
+            int expectedValue = 1;
+            int actualValue;
+
+            //Act
+            myList.Add(value);
+            myList.Add(value2);
+            myList2.Add(value3);
+            myList2.Add(value4);
+            testList = myList - myList2;
+            actualValue = testList[0];
+
+            //Assert
+            Assert.AreEqual(expectedValue, actualValue);
+        }
+
+        [TestMethod]
+        public void Test_of_Minus_When_One_List_is_Empty()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            CustomList<int> myList2 = new CustomList<int>();
+            CustomList<int> testList = new CustomList<int>();
+            int value = 1;
+            int value2 = 2;
+            int value3 = 3;
+            int expectedCount = 3;
+            int actualCount;
+
+            //Act
+            myList.Add(value);
+            myList.Add(value2);
+            myList.Add(value3);
+            testList = myList - myList2;
+            actualCount = myList.Count;
+
+            //Assert
+            Assert.AreEqual(expectedCount, actualCount);
+        }
+
+        [TestMethod]
+        public void Test_of_Minus_Without_Matching_Values()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            CustomList<int> myList2 = new CustomList<int>();
+            CustomList<int> testList = new CustomList<int>();
+            int value = 1;
+            int value2 = 2;
+            int value3 = 3;
+            int num = 4;
+            int num2 = 5;
+            int num3 = 6;
+            int expectedCount = 3;
+            int actualCount;
+
+            //Act
+            myList.Add(value);
+            myList.Add(value2);
+            myList.Add(value3);
+            myList2.Add(num);
+            myList2.Add(num2);
+            myList2.Add(num3);
+            testList = myList - myList2;
+            actualCount = myList.Count;
+
+            //Assert
+            Assert.AreEqual(expectedCount, actualCount);
+        }
 
     }
 }
