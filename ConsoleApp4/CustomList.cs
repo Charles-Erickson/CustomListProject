@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp4
 {
-    public class CustomList<T>
+    public class CustomList<T> //://IEnumerable<T>
     {
 
         public int capacity = 4;
@@ -114,8 +115,72 @@ namespace ConsoleApp4
 
         public void Zipper(CustomList<T> array)
         {
-
+            CustomList<T> temp = new CustomList<T>();
+            int number1 =array.Count;
+            int number2 = Count;
+            int sum = number1 + number2;
+            for (int i = 0; i < sum; i++)
+            {
+                if (i == 0)
+                {
+                    temp.Add(items[i]);
+                }
+                else if ( i== 1)
+                {
+                    temp.Add(array[i-1]);
+                }
+                else if (i % 2 != 0)
+                {
+                    for(int c = 1; c < array.count; c++)
+                    {
+                        temp.Add(array[c]);
+                    }
+                }
+                else if (i % 2 == 0)
+                {
+                    for (int c = 1; c <Count; c++)
+                    {
+                        temp.Add(items[c]);
+                    }
+                }
+            }
+            for (int v = 0; v < Count; v++)
+            {
+                    items[v] = temp[v];
+            }
+            for (int d = count; d < temp.Count; d++)
+            {
+                    Add(temp[d]);
+            }
         }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+
+            throw new NotImplementedException();
+
+            //for (int i = 0; i < sum; i++)
+            //{
+            //    if (i == 0)
+            //    {
+            //        temp.Add(items[i]);
+            //    }
+            //    else if (i % 2 != 0)
+            //    {
+            //        temp.Add(array[i]);
+            //    }
+            //    else if (i % 2 == 0)
+            //    {
+            //        temp.Add(items[i]);
+            //    }
+            //    yield return null;
+            //}
+        }
+
+        //IEnumerator IEnumerable.GetEnumerator()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
 
 

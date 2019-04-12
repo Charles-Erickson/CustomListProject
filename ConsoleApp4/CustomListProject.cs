@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp4
 {
-    class Program
+    class Program 
     {
         static void Main(string[] args)
         {
@@ -17,8 +17,7 @@ namespace ConsoleApp4
             thing.Add(2);
             things.Add(3);
             things.Add(4);
-            result = thing + things;
-            
+            thing.Zipper(things);
         }
     }
 }

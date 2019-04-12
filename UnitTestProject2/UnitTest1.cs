@@ -415,7 +415,7 @@ namespace CustomListTest
             myList2.Add(number);
             myList2.Add(number2);
             myList.Zipper(myList2);
-            actualValue = myList[2];
+            actualValue = myList[1];
 
             //Assert
             Assert.AreEqual(expectedValue, actualValue);
