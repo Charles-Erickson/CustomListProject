@@ -319,8 +319,78 @@ namespace CustomListTest
 
             //Assert
             Assert.AreEqual(expectedString, actualString);
+        }
 
+        [TestMethod]
+        public void Test_Of_Combine_Count()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            CustomList<int> myList2 = new CustomList<int>();
+            int value = 1;
+            int value2 = 2;
+            int value3 = 3;
+            int value4 = 4;
+            int expectedCount = 4;
+            int actualCount;
 
+            //Act
+            myList.Add(value);
+            myList.Add(value2);
+            myList2.Add(value3);
+            myList2.Add(value4);
+            myList.Combine(myList2);
+            actualCount = myList.Count;
+
+            //Assert
+            Assert.AreEqual(expectedCount, actualCount);
+        }
+
+        [TestMethod]
+        public void Test_Of_Combine_Checking_Index()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            CustomList<int> myList2 = new CustomList<int>();
+            int value = 1;
+            int value2 = 2;
+            int value3 = 4;
+            int value4 = 5;
+            int expectedValue = 4;
+            int actualValue;
+
+            //Act
+            myList.Add(value);
+            myList.Add(value2);
+            myList2.Add(value3);
+            myList2.Add(value4);
+            myList.Combine(myList2);
+            actualValue = myList[3];
+
+            //Assert
+            Assert.AreEqual(expectedValue, actualValue);
+        }
+
+        [TestMethod]
+        public void Test_of_Combine_When_One_List_is_Empty()
+        {
+            CustomList<int> myList = new CustomList<int>();
+            CustomList<int> myList2 = new CustomList<int>();
+            int value = 1;
+            int value2 = 2;
+            int value3 = 3;
+            int expectedCount = 3;
+            int actualCount;
+
+            //Act
+            myList.Add(value);
+            myList.Add(value2);
+            myList.Add(value3);
+            myList.Combine(myList2);
+            actualCount = myList.Count;
+
+            //Assert
+            Assert.AreEqual(expectedCount, actualCount);
         }
 
         [TestMethod]
@@ -375,5 +445,7 @@ namespace CustomListTest
             //Assert
             Assert.AreEqual(expectedCount, actualCount);
         }
+
+
     }
 }

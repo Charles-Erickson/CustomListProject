@@ -96,6 +96,36 @@ namespace ConsoleApp4
             return test;
         }
 
+        public void Combine(CustomList<T> array)
+        {
+            CustomList<T> temp = new CustomList<T>();
+            for(int i = 0; i < count; i++)
+            {
+                temp.Add(items[i]);
+            }
+            for(int c = 0; c < count; c++)
+            {
+                temp.Add(array[c]);
+            }
+            for(int v = 0; v < temp.Count; v++)
+            {
+                items[v] = temp[v];
+            }
+        }
+
+
+
+        //public string toString()
+        //{
+        //    string testString;
+        //    for (int i = 0; i < count; i++)
+        //    {
+
+        //        testString = testString + items[i]
+        //    }
+
+        //}
+
 
     }
 }

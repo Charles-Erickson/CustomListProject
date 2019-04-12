@@ -15,9 +15,9 @@ namespace ConsoleApp4
             thing.Add(6);
             thing.Add(2);
             thing.Add(5);
-            thing.Add(4);
-            thing.Add(2);
-            thing.Remove(5);
+            things.Add(4);
+            things.Add(2);
+            thing.Combine(things);
         }
     }
 }
