@@ -113,6 +113,28 @@ namespace ConsoleApp4
             return returnList;
         }
 
+        public static CustomList<T> operator -(CustomList<T> a, CustomList<T> b)
+        {
+            CustomList<T> returnList;
+            CustomList<T> temp = new CustomList<T>();
+            for (int i = 0; i < a.Count; i++)
+            {
+                for (int c = 0; c < b.Count; c++)
+                {
+                    if (Equals(a.items[i], b.items[c]))
+                    {
+                        a.Remove(a.items[i]);
+                    }
+                    else if (Equals(a.items[i], b.items[c]))
+                    {
+                        temp.Add(a.items[i]);
+                    }
+                }                
+            }
+            returnList = temp;
+            return returnList;
+        }
+
         public void Zipper(CustomList<T> array)
         {
             CustomList<T> temp = new CustomList<T>();
@@ -182,6 +204,7 @@ namespace ConsoleApp4
         //    throw new NotImplementedException();
         //}
 
+        //overide
 
 
         //public string toString()

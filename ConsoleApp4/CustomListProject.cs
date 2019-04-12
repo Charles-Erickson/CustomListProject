@@ -15,9 +15,9 @@ namespace ConsoleApp4
             CustomList<int> result;
             thing.Add(1);
             thing.Add(2);
-            things.Add(3);
+            things.Add(2);
             things.Add(4);
-            thing.Zipper(things);
+            result = thing - things;
         }
     }
 }
