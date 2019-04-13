@@ -10,14 +10,16 @@ namespace ConsoleApp4
     {
         static void Main(string[] args)
         {
-            CustomList<int> thing = new CustomList<int>();
-            CustomList<int> things = new CustomList<int>();
-            CustomList<int> result;
-            thing.Add(1);
-            thing.Add(2);
-            things.Add(2);
-            things.Add(4);
+            CustomList<string> thing = new CustomList<string>();
+            CustomList<string> things = new CustomList<string>();
+            CustomList<string> result;
+            thing.Add("make");
+            thing.Add("bubba");
+            things.Add("bubba");
+            things.Add("dave");
             result = thing - things;
+          
+         
         }
     }
 }

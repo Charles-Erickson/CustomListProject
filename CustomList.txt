@@ -1,0 +1,11 @@
+For the - function within my Custom List Project I was able to overload the "-" syntax to work with my custom list class.
+The function takes in two parameters that are both instances of my custom list class.
+After that the function creates a new custom list.
+Then the 2 seperate parameters entered the function are comapared by all values of the first list indeices against the secondlist indeices.  
+From there if the the values are not equal the value is added to new custom list.
+If the values are equal then it is removed from the first list as to ensure there are no repeats of comparisons.
+After all values are compared and the passing values have been entered into the new custom list the new custom list is returned.
+The reurn type is  CustomList<T>.
+
+An Example would be [1,2,3]-[2,4].
+This example the 2 value would be removed and the return result would be a new list [1,3].

@@ -7,12 +7,17 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp4
 {
-    public class CustomList<T> //://IEnumerable<T>
+    public class CustomList<T> /*:IEnumerable<T>*/
     {
 
         public int capacity = 4;
         public T[] items;
         bool test;
+
+        public void Text()
+        {
+           string Test= stream
+        }
 
         public T this[int i]
         {
@@ -177,31 +182,68 @@ namespace ConsoleApp4
                     Add(temp[d]);
             }
         }
-
-        public IEnumerator<T> GetEnumerator()
+        public string toString()
         {
+            string testString = "";
+            for (int i = 0; i < count; i++)
+            {
 
-            throw new NotImplementedException();
+                testString = testString + items[i];
+            }
+            return testString;
 
-            //for (int i = 0; i < sum; i++)
-            //{
-            //    if (i == 0)
-            //    {
-            //        temp.Add(items[i]);
-            //    }
-            //    else if (i % 2 != 0)
-            //    {
-            //        temp.Add(array[i]);
-            //    }
-            //    else if (i % 2 == 0)
-            //    {
-            //        temp.Add(items[i]);
-            //    }
-            //    yield return null;
-            //}
         }
+    }
+}
 
-        //IEnumerator IEnumerable.GetEnumerator()
+
+
+//i=0;i<list.length;i+2
+//i=1;i<list.length;i+2
+
+//if(%2=0) add array[i]
+
+
+//public void Combine(CustomList<T> list2)
+//{
+//  for(int i = 0; i < count; i++)
+//    {
+//        Add(list2[i]);
+//    }
+//}
+
+    //IEnumerator IEnumerable.GetEnumerator()
+        //{
+        //    for (int i = 0; i < count; i++)
+        //    {
+        //        yield return list[i];
+
+        //    }
+        //}
+
+        //public IEnumerator<T> GetEnumerator()
+        //{
+
+        //    throw new NotImplementedException();
+
+        //for (int i = 0; i < sum; i++)
+        //{
+        //    if (i == 0)
+        //    {
+        //        temp.Add(items[i]);
+        //    }
+        //    else if (i % 2 != 0)
+        //    {
+        //        temp.Add(array[i]);
+        //    }
+        //    else if (i % 2 == 0)
+        //    {
+        //        temp.Add(items[i]);
+        //    }
+        //    yield return null;
+        //}
+
+            //IEnumerator IEnumerable.GetEnumerator()
         //{
         //    throw new NotImplementedException();
         //}
@@ -219,22 +261,3 @@ namespace ConsoleApp4
         //    }
 
         //}
-
-
-    }
-}
-
-
-//i=0;i<list.length;i+2
-//i=1;i<list.length;i+2
-
-//if(%2=0) add array[i]
-
-
-//public void Combine(CustomList<T> list2)
-//{
-//  for(int i = 0; i < count; i++)
-//    {
-//        Add(list2[i]);
-//    }
-//}
