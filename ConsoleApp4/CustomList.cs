@@ -125,12 +125,14 @@ namespace ConsoleApp4
                     {
                         a.Remove(a.items[i]);
                     }
-                    else if (Equals(a.items[i], b.items[c]))
+                    else if (!Equals(a.items[i], b.items[c]))
                     {
                         temp.Add(a.items[i]);
+                        break;
                     }
                 }                
             }
+            temp.count--;
             returnList = temp;
             return returnList;
         }
