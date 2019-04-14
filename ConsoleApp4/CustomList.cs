@@ -14,10 +14,10 @@ namespace ConsoleApp4
         public T[] items;
         bool test;
 
-        public void Text()
-        {
-           string Test= stream
-        }
+       
+
+
+        
 
         public T this[int i]
         {
@@ -182,17 +182,17 @@ namespace ConsoleApp4
                     Add(temp[d]);
             }
         }
-        public string toString()
+
+        public override string ToString()
         {
             string testString = "";
             for (int i = 0; i < count; i++)
             {
-
                 testString = testString + items[i];
             }
             return testString;
-
         }
+        
     }
 }
 
