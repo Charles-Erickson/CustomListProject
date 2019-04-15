@@ -17,6 +17,7 @@ namespace ConsoleApp4
             thing.Add("bubba");
             things.Add("bubba");
             things.Add("dave");
+            result = thing - things;
             
             
             foreach(string name in thing)
