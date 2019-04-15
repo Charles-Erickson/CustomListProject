@@ -14,11 +14,6 @@ namespace ConsoleApp4
         public T[] items;
         bool test;
 
-       
-
-
-        
-
         public T this[int i]
         {
             get { return items[i]; }
@@ -117,30 +112,6 @@ namespace ConsoleApp4
             returnList = temp;
             return returnList;
         }
-
-        //public static CustomList<T> operator -(CustomList<T> a, CustomList<T> b)
-        //{
-        //    CustomList<T> returnList;
-        //    CustomList<T> temp = new CustomList<T>();
-        //    for (int i = 0; i < a.Count; i++)
-        //    {
-        //        for (int c = 0; c < b.Count; c++)
-        //        {
-        //            if (Equals(a.items[i], b.items[c]))
-        //            {
-        //                a.Remove(a.items[i]);
-        //            }
-        //            else if (!Equals(a.items[i], b.items[c]))
-        //            {
-        //                temp.Add(a.items[i]);
-        //                break;
-        //            }
-        //        }                
-        //    }
-        //    temp.count--;
-        //    returnList = temp;
-        //    return returnList;
-        //}
 
         public static CustomList<T> operator -(CustomList<T> a, CustomList<T> b)
         {
@@ -250,52 +221,76 @@ namespace ConsoleApp4
 //    }
 //}
 
-    //IEnumerator IEnumerable.GetEnumerator()
-        //{
-        //    for (int i = 0; i < count; i++)
-        //    {
-        //        yield return list[i];
+//IEnumerator IEnumerable.GetEnumerator()
+//{
+//    for (int i = 0; i < count; i++)
+//    {
+//        yield return list[i];
 
-        //    }
-        //}
+//    }
+//}
 
-        //public IEnumerator<T> GetEnumerator()
-        //{
+//public IEnumerator<T> GetEnumerator()
+//{
 
-        //    throw new NotImplementedException();
+//    throw new NotImplementedException();
 
-        //for (int i = 0; i < sum; i++)
-        //{
-        //    if (i == 0)
-        //    {
-        //        temp.Add(items[i]);
-        //    }
-        //    else if (i % 2 != 0)
-        //    {
-        //        temp.Add(array[i]);
-        //    }
-        //    else if (i % 2 == 0)
-        //    {
-        //        temp.Add(items[i]);
-        //    }
-        //    yield return null;
-        //}
+//for (int i = 0; i < sum; i++)
+//{
+//    if (i == 0)
+//    {
+//        temp.Add(items[i]);
+//    }
+//    else if (i % 2 != 0)
+//    {
+//        temp.Add(array[i]);
+//    }
+//    else if (i % 2 == 0)
+//    {
+//        temp.Add(items[i]);
+//    }
+//    yield return null;
+//}
 
-            //IEnumerator IEnumerable.GetEnumerator()
-        //{
-        //    throw new NotImplementedException();
-        //}
+//IEnumerator IEnumerable.GetEnumerator()
+//{
+//    throw new NotImplementedException();
+//}
 
-        //overide
+//overide
 
 
-        //public string toString()
-        //{
-        //    string testString;
-        //    for (int i = 0; i < count; i++)
-        //    {
+//public string toString()
+//{
+//    string testString;
+//    for (int i = 0; i < count; i++)
+//    {
 
-        //        testString = testString + items[i]
-        //    }
+//        testString = testString + items[i]
+//    }
 
-        //}
+//}
+
+//public static CustomList<T> operator -(CustomList<T> a, CustomList<T> b)
+//{
+//    CustomList<T> returnList;
+//    CustomList<T> temp = new CustomList<T>();
+//    for (int i = 0; i < a.Count; i++)
+//    {
+//        for (int c = 0; c < b.Count; c++)
+//        {
+//            if (Equals(a.items[i], b.items[c]))
+//            {
+//                a.Remove(a.items[i]);
+//            }
+//            else if (!Equals(a.items[i], b.items[c]))
+//            {
+//                temp.Add(a.items[i]);
+//                break;
+//            }
+//        }                
+//    }
+//    temp.count--;
+//    returnList = temp;
+//    return returnList;
+//}
