@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp4
 {
-    public class CustomList<T> /*:IEnumerable<T>*/
+    public class CustomList<T> :IEnumerable<T>
     {
 
         public int capacity = 4;
@@ -192,7 +192,20 @@ namespace ConsoleApp4
             }
             return testString;
         }
-        
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            for(int i = 0; i < Count; i++)
+            {
+               yield return items[i];
+            }
+          
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
